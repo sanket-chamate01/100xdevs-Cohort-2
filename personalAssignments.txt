@@ -1,3 +1,0 @@
-create a todo that lets users store todos on the server
-create a http server in golang using gurrila framework
-create a http server from scratch in c/java

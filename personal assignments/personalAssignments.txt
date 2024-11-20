@@ -1,0 +1,13 @@
+api - 
+create a todo that lets users store todos on the server
+create a http server in golang using gurrila framework
+create a http server from scratch in c/java
+
+middleware - 
+find avg time your server is taking to handle request
+
+authentication/input validation -
+let people signup to your website, only allow signed in people to see the list of registered people
+
+jwt -
+pracice 1 img
