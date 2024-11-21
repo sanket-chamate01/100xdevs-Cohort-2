@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 
 mongoose.connect(
-    "mongodb+srv://sanket:sanket@cohort.bq8x5.mongodb.net/userappnew"
+    "url"
 );
 
 const User = mongoose.model("User", {

@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 mongoose.connect(
-    "mongodb+srv://sanket:sanket@cohort.bq8x5.mongodb.net/user_app"
+    "url"
 );
 
 const User = mongoose.model("user", {
