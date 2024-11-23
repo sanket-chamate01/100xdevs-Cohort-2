@@ -32,14 +32,23 @@
             }
         )
     }
+
+    async function populateDiv(){
+        const a = parseInt(document.getElementById("firstNumber").value);
+        const b = parseInt(document.getElementById("secondNumber").value);
+        const response = await fetch(`http://localhost:3000/sum?a=${a}&b=${b}`);
+        const ans = await response.text();
+        document.getElementById("finalSum").innerHTML = ans;
+    }
+
 </script>
 <body>
     <!-- <input oninput="populateDiv()" id="firstNumber" type="text" placeholder="First Name">
     <br><br>
     <input oninput="populateDiv()" id="secondNumber" type="text" placeholder="Second Name"> -->
-    <input id="firstNumber" type="text" placeholder="First Name">
+    <input id="firstNumber" type="text" placeholder="First Number">
     <br><br>
-    <input id="secondNumber" type="text" placeholder="Second Name">
+    <input id="secondNumber" type="text" placeholder="Second Number">
     <br><br>
     <button onclick="populateDiv()">Calculate Sum</button>
     <br><br>

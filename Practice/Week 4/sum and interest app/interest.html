@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum</title>
+</head>
+<script>
+
+    async function populateDiv(){
+        const a = parseInt(document.getElementById("principalAmount").value);
+        const b = parseInt(document.getElementById("rate").value);
+        const c = parseInt(document.getElementById("time").value);
+        const response = await fetch(`http://localhost:3000/interest?a=${a}&b=${b}&c=${c}`);
+        const ans = await response.text();
+        document.getElementById("interest").innerHTML = ans;
+    }
+
+</script>
+<body>
+    <input id="principalAmount" type="text" placeholder="Principal Amount">
+    <br><br>
+    <input id="rate" type="text" placeholder="Rate %">
+    <br><br>
+    <input id="time" type="text" placeholder="Time (in years)">
+    <br><br>
+    <button onclick="populateDiv()">Find Interest</button>
+    <br><br>
+    <div id="interest"></div>
+</body>
+</html>
