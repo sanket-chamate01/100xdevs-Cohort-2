@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum</title>
+</head>
+<script>
+    function populateDiv(){
+        // normal
+
+        /*
+        const a = document.getElementById("firstNumber").value;
+        // or
+        // const a = document.querySelector(".firstNumber");
+        const b = document.getElementById("secondNumber").value;
+        console.log(a);
+        const element = document.getElementById("finalSum");
+        element.innerHTML = parseInt(a, 10) + parseInt(b, 10);
+        */
+
+        // with fetch, hiding backend
+        const a = parseInt(document.getElementById("firstNumber").value);
+        const b = parseInt(document.getElementById("secondNumber").value);
+        fetch(`http://localhost:3000/sum?a=${a}&b=${b}`).then(
+            (response) => {
+                response.text().then(
+                    (ans) => {
+                        document.getElementById("finalSum").innerHTML = ans;
+                    }
+                )
+            }
+        )
+    }
+</script>
+<body>
+    <!-- <input oninput="populateDiv()" id="firstNumber" type="text" placeholder="First Name">
+    <br><br>
+    <input oninput="populateDiv()" id="secondNumber" type="text" placeholder="Second Name"> -->
+    <input id="firstNumber" type="text" placeholder="First Name">
+    <br><br>
+    <input id="secondNumber" type="text" placeholder="Second Name">
+    <br><br>
+    <button onclick="populateDiv()">Calculate Sum</button>
+    <br><br>
+    <div id="finalSum"></div>
+</body>
+</html>
