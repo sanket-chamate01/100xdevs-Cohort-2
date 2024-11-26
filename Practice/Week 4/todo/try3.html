@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+</head>
+<body>
+    <input id="title" type="text" placeholder="Todo">
+    <br><br>
+    <input id="desc" type="text" placeholder="Description">
+    <br><br>
+    <div id="todos"></div>
+
+    <script>
+
+        function createChild(title, desc, id){
+            const child = document.createElement("div");
+            const innerTitle = document.createElement("div");
+            innerTitle.innerHTML = title;
+            const innerDesc = document.createElement("div");
+            innerDesc.innerHTML = desc;
+            const mark = document.createElement("button");
+            mark.innerHTML = "Mark as Done";
+            mark.setAttribute("onclick", `markAsDone(${id})`);
+            child.appendChild(innerTitle);
+            child.appendChild(innerDesc);
+            child.appendChild(mark);
+            child.setAttribute("id", id);
+            return child;
+        }
+    
+        // state will allways be an array
+        // every element of state will have title, desc, and id
+    
+        function updateDomAccToState(state){
+            const parent = document.getElementById("todos");
+            parent.innerHTML = "";
+            for(let i = 0; i < state.length; i++){
+                const child = createChild(state[i].title, state[i].desc, state[i].id);
+                parent.appendChild(child);
+            }
+        }
+    
+        updateDomAccToState([{
+            title: "title",
+            desc: "desc",
+            id: 1
+        }])
+    
+    
+    </script>
+
+</body>
+</html>

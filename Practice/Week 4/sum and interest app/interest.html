@@ -7,6 +7,14 @@
 </head>
 <script>
 
+    let timeout;
+    function debouncePopulateDiv(){
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+            populateDiv()
+        }, 1000);
+    }
+
     async function populateDiv(){
         const a = parseInt(document.getElementById("principalAmount").value);
         const b = parseInt(document.getElementById("rate").value);
