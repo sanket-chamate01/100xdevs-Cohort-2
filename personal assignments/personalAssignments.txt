@@ -11,3 +11,6 @@ let people signup to your website, only allow signed in people to see the list o
 
 jwt -
 pracice 1 img
+
+to deploy app -
+use render for backend and vercel for frontend
