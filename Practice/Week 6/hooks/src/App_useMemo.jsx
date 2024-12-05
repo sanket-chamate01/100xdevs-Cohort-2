@@ -5,6 +5,7 @@ function App(){
     const [counter, setCounter] = useState(0)
     const [value, setValue] = useState(0)
 
+    // use this when you want to get a value in return through an expensive computation but does not want to re-render that computation if the input values does not change
     // this could have been a better solution but when value changes, finalValue also changes so does it's state which cause another re-render, so 2 instead of 1
 
     // const [finalValue, setFinalValue] = useState(0)
