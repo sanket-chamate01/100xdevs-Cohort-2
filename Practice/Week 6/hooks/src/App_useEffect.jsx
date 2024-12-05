@@ -5,6 +5,7 @@ function App() {
   
   const [todos, setTodos] = useState([])
 
+  // use useEffect when you want to do a side effect (setInterval, setTimeout, etc)
   useEffect( () => {
     fetch("https://jsonplaceholder.typicode.com/todos").then(async (res) => {
       const json = await res.json();

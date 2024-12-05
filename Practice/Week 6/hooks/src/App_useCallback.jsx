@@ -3,7 +3,9 @@ import { memo, useCallback, useState }  from "react";
 function App(){
     const [count, setCount] = useState(0)
 
-    const buttonClick = useCallback(() => {
+    // useCallback makes sure that the function is not re-rendered again
+    // if a=1 and b=1 then a==b, but that is not the case with functions, so useCallback let us know that the function is same and as there is no change in that function do not re-rendered it
+    const buttonClick = useCallback(() => { 
         console.log("child clicked")
     }, [])
 

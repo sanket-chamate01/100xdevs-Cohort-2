@@ -5,7 +5,7 @@ function App(){
     const [counter, setCounter] = useState(0)
     const [value, setValue] = useState(0)
 
-    // this could have been a better solution but when value changes, finalValue also changes which cause another re-render, so 2 instead of 1
+    // this could have been a better solution but when value changes, finalValue also changes so does it's state which cause another re-render, so 2 instead of 1
 
     // const [finalValue, setFinalValue] = useState(0)
     // useEffect(() => {
@@ -22,13 +22,13 @@ function App(){
     //     a = a + i;
     // }
 
-    let a = useMemo(() => {
+    let a = useMemo(() => { // use this incase of value and use useCallback incase of function
         let a = 0;
         for(let i = 0; i - 1 < value; i++){
             a = a + i;
         }
         return a;
-    }, [value])
+    }, [value]) // this expensive function will only run when input value(value) changes
 
     const getInput = (event) => {
         const v = event.target.value;
