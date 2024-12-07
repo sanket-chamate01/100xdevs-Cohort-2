@@ -23,7 +23,7 @@ function Todo({id}) {
       <br />
       {todo.userId}
       <p>Status: {todo.completed ? "Completed" : "Pending"}</p>
-
+      
       -----------------------------------
       <br />
     </>
