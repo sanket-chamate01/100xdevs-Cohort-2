@@ -20,28 +20,10 @@
 // }
 // console.log(isLegal(25))
 
-// function runAfter3Sec(fn: () => void){
-//     setTimeout(fn, 3000)
-// }
-// runAfter3Sec(() => {
-//     console.log("Executed after 3 sec")
-// })
+function runAfter3Sec(fn: () => void){
+    setTimeout(fn, 3000)
+}
+runAfter3Sec(() => {
+    console.log("Executed after 3 sec")
+})
 
-interface User {
-    firstname: string,
-    lastname: string,
-    email: string,
-    age: 23
-}
-function isLegal(user: User): boolean {
-    if(user.age > 18){
-        return true;
-    }
-    return false;
-}
-console.log(isLegal({
-    firstname: "Sanket",
-    lastname: "Chamate",
-    email: "sanket@gmail.com",
-    age: 23
-}))
