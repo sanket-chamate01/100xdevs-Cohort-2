@@ -30,10 +30,9 @@ async function insertUserData(){
 
 async function insertUserDataFromArguments(username: string, email: string, password: string){
     await client.connect()
-    const result = await client.query(`
-        insert into users (username, email, password)
-        values ($1, $2, $3);
-    `)
+    const insertQuery = "insert into users (username, email, password) values ($1, $2, $3);"
+    const values = [username, email, password]
+    const result = await client.query(insertQuery, values)
     console.log(result)
     client.end()
 }
