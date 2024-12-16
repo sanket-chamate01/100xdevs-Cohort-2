@@ -10,5 +10,6 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url = "postgresql://Cohort_owner:ZdWxlaIk4K9p@ep-silent-frost-a42mwg9h.us-east-1.aws.neon.tech/Cohort?sslmode=require"
+  // url = env("DATABASE_URL") or you can use this
 }
