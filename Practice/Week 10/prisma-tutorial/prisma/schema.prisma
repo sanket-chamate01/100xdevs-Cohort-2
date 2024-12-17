@@ -10,7 +10,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url = "url"
+  url = "postgresql://neondb_owner:D4eoKVWLU8lp@ep-lingering-rice-a5e9c48o.us-east-2.aws.neon.tech/neondb?sslmode=require"
   // url = env("DATABASE_URL") or you can use this
 }
 
@@ -29,3 +29,7 @@ model Todos {
   done          Boolean   @default(false)
   userId        Int
 }
+
+// run 
+// npx prisma migrate dev --name <migration-name>
+// npx prisma generate
