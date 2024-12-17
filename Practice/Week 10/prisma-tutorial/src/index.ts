@@ -13,6 +13,8 @@ const prisma = new PrismaClient()
 
 // deleteUser("aryan2@gmail.com")
 
+getUser("sanket@gmail.com")
+
 async function insertUser(username: string, password: string, firstname: string, lastname: string){
     const res = await prisma.user.create({
         data: {
@@ -47,6 +49,15 @@ async function updateUser(username: string, value : UpdateParams){ // or {firstn
 
 async function deleteUser(username: string){
     const res = await prisma.user.delete({
+        where: {
+            username
+        }
+    })
+    console.log(res)
+}
+
+async function getUser(username: string){
+    const res = await prisma.user.findFirst({
         where: {
             username
         }
