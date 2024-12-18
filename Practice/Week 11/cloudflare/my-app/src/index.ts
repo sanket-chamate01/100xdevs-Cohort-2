@@ -11,8 +11,35 @@
  * Learn more at https://developers.cloudflare.com/workers/
  */
 
+// run
+// npm create cloudflare -- <deployment/folder/project name>
+// npm run dev (to run application locally)
+// npx wrangler login (to login to cloudflare account)
+// npm run deploy (to deploy the application)
+
+// export interface Env {
+
+// }
+
 export default {
 	async fetch(request, env, ctx): Promise<Response> {
-		return new Response('Hello World!');
+		return new Response('Hello, deployed from bare metal');
 	},
 } satisfies ExportedHandler<Env>;
+
+// export default {
+// 	async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
+// 		console.log(request.body);
+// 		console.log(request.headers);
+		
+// 		if (request.method === "GET") {
+// 			return Response.json({
+// 				message: "you sent a get request"
+// 			});
+// 		} else {
+// 			return Response.json({
+// 				message: "you did not send a get request"
+// 			});
+// 		}
+// 	},
+// };
