@@ -1,0 +1,8 @@
+save objects (file, images, videos, etc) in s3
+use a CDNs (content delivery network) (AWS CloudFront) for s3 link for better access
+
+run - npm run build ( to get distribution app)
+install serve globally ( npm install -g serve ) which serves all the html, css, js files. 
+
+refer -
+https://projects.100xdevs.com/tracks/w5E6PT2t0IyOFM3bZxcM/aws-fe-2
