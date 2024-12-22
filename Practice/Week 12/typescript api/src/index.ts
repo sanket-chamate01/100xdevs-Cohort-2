@@ -35,3 +35,55 @@ type User1 = {  // User1 type has all properties as readonly, so they cannot be 
 
 type readOnlyProps = Readonly<User>; // User type with all properties as readonly
 
+/////////////////////////////////// --------------------- Record
+
+// Record<K, T> - Construct a type with a set of properties K of type T
+// key - value pair
+
+type uglyRecordProps = { // ugly way
+    [key: string]: {
+        name: string,
+        age: number
+    }
+}
+
+type recordProps = Record<string, User>; // better way
+
+const user1: recordProps = {
+    'sasvba': {
+        id: 'sasvba',
+        name: 'John',
+        age: 25,
+        email: 'john@example.com',
+        password: 'johnpassword'
+    },
+    'plsas1': {
+        id: 'plsas1',
+        name: 'Doe',
+        age: 35,
+        email: 'doe@example.com',
+        password: 'doepassword'
+    }
+}
+
+/////////////////////////////////// --------------------- Map
+
+// Map is a type that represents an object that maps keys to values
+
+const mapProps = new Map<string, User>()
+
+mapProps.set('sasvba', {
+    id: 'sasvba',
+    name: 'John',
+    age: 25,
+    email: '',
+    password: ''
+})
+mapProps.delete('sasvba')
+
+/////////////////////////////////// --------------------- Exclude
+
+// Exclude<T, U> - Exclude from T those types that are assignable to U
+
+type excludeProps = Exclude<User, { id: string, password: string }> // exclude id and password from User
+
