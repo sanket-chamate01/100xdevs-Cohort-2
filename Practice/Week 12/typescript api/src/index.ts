@@ -70,7 +70,7 @@ const user1: recordProps = {
 
 // Map is a type that represents an object that maps keys to values
 
-const mapProps = new Map<string, User>()
+const mapProps = new Map<string, User>() // not a typescript type, but a javascript type
 
 mapProps.set('sasvba', {
     id: 'sasvba',
@@ -85,5 +85,13 @@ mapProps.delete('sasvba')
 
 // Exclude<T, U> - Exclude from T those types that are assignable to U
 
-type excludeProps = Exclude<User, { id: string, password: string }> // exclude id and password from User
+type EventType = 'click' | 'mouseover' | 'keydown' | 'load' | 'unload'
 
+type excludeProps = Exclude<EventType, 'click' | 'mouseover'> // 'keydown' | 'load' | 'unload'
+
+const handleEvent = (event: excludeProps) => {
+    console.log(event)
+}
+
+handleEvent('keydown') // valid
+// handleEvent('click') // invalid
