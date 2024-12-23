@@ -71,6 +71,8 @@ async function getUser(username: string){
 
 // getAllTodo()
 
+getUserAndTodos(3)
+
 async function insertTodo(title: string, description: string, done: boolean, userId: number){
     const res = await prisma.todos.create({
         data: {
@@ -124,10 +126,16 @@ async function getAllTodo(){
     console.log(res)
 }
 
-async function getUserAllTodos(id: number){
+async function getUserAndTodos(userId: number){
     const res = await prisma.todos.findMany({
         where: {
-            userId: id
+            userId
+        },
+        select: {
+            title: true,
+            description: true,
+            done: true,
+            user: true
         }
     })
     console.log(res)
