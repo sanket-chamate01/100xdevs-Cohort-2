@@ -10,7 +10,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = ""
+  url      = "postgresql://neondb_owner:D4eoKVWLU8lp@ep-lingering-rice-a5e9c48o.us-east-2.aws.neon.tech/neondb?sslmode=require"
 }
 
 model User {
@@ -19,6 +19,7 @@ model User {
   password  String    // String? for optional field
   firstname String
   lastname  String
+  todos     Todos[]
 }
 
 model Todos {
@@ -27,6 +28,7 @@ model Todos {
   description   String?   // optional
   done          Boolean   @default(false)
   userId        Int
+  user          User      @relation(fields: [userId], references: [id])
 }
 
 // run 
