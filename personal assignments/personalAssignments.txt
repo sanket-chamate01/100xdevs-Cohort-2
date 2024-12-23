@@ -14,3 +14,14 @@ pracice 1 img
 
 to deploy app -
 use render for backend and vercel for frontend
+
+--------------------------------------------------------------------
+
+Try creating a todo application that let’s a user signup, put todos and fetch todos. 
+Use 
+Typescript as the language
+Prisma as the ORM
+Postgres as the database
+Zod as validation library
+ 
+--------------------------------------------------------------------
